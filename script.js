@@ -12641,6 +12641,11 @@ chapterSelector.querySelector("select").addEventListener("change", event => {
     displayChapterVerses(selectedChapter, arabicChapterMap.get(selectedChapter), englishChapterMap.get(selectedChapter));
 });
 
+function checkRtl(character) {
+    var RTL = ['ا','ب','پ','ت','س','ج','چ','ح','خ','د','ذ','ر','ز','ژ','س','ش','ص','ض','ط','ظ','ع','غ','ف','ق','ک','گ','ل','م','ن','و','ه','ی'];
+    return RTL.indexOf(character) > -1;
+}
+
 function displayChapterVerses(chapter, arabicVerses, englishVerses) {
     const versePairsHTML = generateVersePairs(arabicVerses, englishVerses);
     versesContainer.innerHTML = `<h2>${chapterNames[chapter - 1]}</h2>${versePairsHTML}`;
@@ -12653,11 +12658,14 @@ function generateVersePairs(arabicVerses, englishVerses) {
         const arabicVerse = arabicVerses[i];
         const englishVerse = englishVerses[i];
 
+        const arabicRtlClass = checkRtl(arabicVerse[0]) ? 'rtl' : 'ltr'; // Apply RTL or LTR class for Arabic verse
+        const englishRtlClass = checkRtl(englishVerse[0]) ? 'rtl' : 'ltr'; // Apply RTL or LTR class for English verse
+
         versePairsHTML += `
             <div class="verse-pair">
                 <div class="verse">
-                    <p class="arabic-verse">${arabicVerse}</p>
-                    <p class="english-verse">${englishVerse}</p>
+                    <p class="arabic-verse ${arabicRtlClass}">${arabicVerse}</p>
+                    <p class="english-verse ${englishRtlClass}">${englishVerse}</p>
                 </div>
             </div>
             <div class="verse-separator"></div>
