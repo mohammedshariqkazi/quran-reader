@@ -1,5 +1,5 @@
 body {
-    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    font-family: 'Lateef', sans-serif;
     font-size: 20px;
     margin: 0;
     padding: 0;
@@ -64,7 +64,7 @@ h1 {
     color: #000; /* Change text color to black */
 }
 .verses-container.arabic-verse {
-    font-family: 'Noto Sans Arabic', sans-serif; /* Set the font family for Arabic verses */
+    font-family: 'Lateef', sans-serif; /* Set the font family for Arabic verses */
 }
 
 .verse-pair {
@@ -72,7 +72,7 @@ h1 {
 }
 
 .arabic-verse {
-    font-family: 'IBM Plex Sans Arabic', sans-serif; /* Change font-family */
+    font-family: 'Lateef', sans-serif; /* Change font-family */
     font-size: 20px; /* Change font size to 20px */
     line-height: 1.5;
     direction: rtl;
@@ -86,7 +86,7 @@ h1 {
 }
 
 .english-verse {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Lateef', sans-serif;
     font-size: 18px; /* Change font size to 18px */
     line-height: 1.5;
     margin: 2px 0;
