@@ -306,3 +306,10 @@ h1 {
     width: 100px; /* Set logo width */
 }
 
+@media only screen and (max-width: 768px) {
+    body {
+        padding-top: env(safe-area-inset-top); /* Ensure content is not obscured by status bar */
+        background: linear-gradient(to bottom, #3498db, #ffffff, #ff6b6b);
+    }
+}
+
