@@ -1,6 +1,6 @@
 {
-    "short_name": "Quran",
-    "name": "Quran Reader by Shaaz",
+    "short_name": "ReadQuran",
+    "name": "ReadQuran",
     "description": "A Quran reader app with Arabic and English verses.",
     "icons": [
         {
