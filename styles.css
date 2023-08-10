@@ -132,7 +132,7 @@ h1 {
 /* New styles for top header and "Created with ❤ by Shariq Kazi" link */
 .top-header {
     background: linear-gradient(to bottom, #3498db, #ffffff, #ff6b6b); /* Blue to white to pink gradient */
-    color: #fff;
+    color: #000;
     text-align: center;
     padding: 15px 0;
 }
