@@ -1,6 +1,6 @@
 {
-    "short_name": "ReadQuran",
-    "name": "ReadQuran",
+    "short_name": "QuranRead",
+    "name": "QuranRead",
     "description": "A Quran reader app with Arabic and English verses.",
     "icons": [
         {
@@ -12,6 +12,11 @@
     "start_url": "/",
     "background_color": "#3498db",
     "display": "standalone",
+    "scope": "/",
     "theme_color": "#3498db",
-    "splash": "splash.jpg" // Add this line
+    "splash_screen": {
+        "assets": {
+            "imagePath": "splash.jpg"
+        }
+    }
 }
