@@ -50,7 +50,7 @@ h1 {
 
 .dropdown-icon {
     position: absolute;
-    top: 50%;
+    top: 40%;
     right: 10px;
     transform: translateY(-50%);
     pointer-events: none;
