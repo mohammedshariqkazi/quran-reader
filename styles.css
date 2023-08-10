@@ -59,6 +59,7 @@ h1 {
 
 .verses-container {
     padding: 15px;
+    font-size: 30px;
     background-color: #fff; /* Change background color to white */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px; /* Add rounded border */
@@ -162,7 +163,7 @@ h1 {
 
 .dropdown-icon {
     position: absolute;
-    font-size: 20px;
+    font-size: 30px;
     top: 50%;
     right: 10px;
     transform: translateY(-50%);
