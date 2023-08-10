@@ -13,5 +13,5 @@
     "background_color": "#3498db",
     "display": "standalone",
     "theme_color": "#3498db",
-    "splash": "splash.gif" // Add this line
+    "splash": "splash.jpg" // Add this line
 }
