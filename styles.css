@@ -162,6 +162,7 @@ h1 {
 
 .dropdown-icon {
     position: absolute;
+    font-size: 20px;
     top: 50%;
     right: 10px;
     transform: translateY(-50%);
