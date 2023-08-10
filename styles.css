@@ -1,6 +1,6 @@
 body {
     font-family: 'Lateef', sans-serif;
-    font-size: 50px;
+    font-size: 35px;
     font-weight: bold;
     margin: 0;
     padding: 0;
@@ -74,7 +74,7 @@ h1 {
 
 .arabic-verse {
     font-family: 'Lateef', sans-serif; /* Change font-family */
-    font-size: 35px; /* Change font size to 20px */
+    font-size: 50px; /* Change font size to 20px */
     line-height: 1.5;
     direction: rtl;
     text-align: right;
