@@ -306,10 +306,13 @@ h1 {
     width: 100px; /* Set logo width */
 }
 
-@media only screen and (max-width: 768px) {
-    body {
-        padding-top: env(safe-area-inset-top); /* Ensure content is not obscured by status bar */
-        background: linear-gradient(to bottom, #3498db, #ffffff, #ff6b6b);
-    }
+.status-bar-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: env(safe-area-inset-top);
+    background: linear-gradient(to bottom, #3498db, #ffffff, #ff6b6b);
+    z-index: -1; /* Place it behind other elements */
 }
 
