@@ -69,7 +69,7 @@ h1 {
     color: #000; /* Change text color to black */
 }
 .verses-container.arabic-verse {
-    font-family: 'Lateef', sans-serif; /* Set the font family for Arabic verses */
+    font-family: 'Al Qalam Quran Majeed Web', sans-serif; /* Set the font family for Arabic verses */
 }
 
 .verse-pair {
