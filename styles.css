@@ -1,5 +1,12 @@
+@font-face {
+    font-family: 'Al Qalam Quran Majeed Web';
+    src: url('font/Al Qalam Quran Majeed Web Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
-    font-family: 'Lateef', sans-serif;
+    font-family: 'Al Qalam Quran Majeed Web', sans-serif;
     font-size: 40px;
     margin: 0;
     padding: 0;
@@ -70,7 +77,7 @@ h1 {
 }
 
 .arabic-verse {
-    font-family: 'IBM Plex Sans Arabic', sans-serif; /* Change font-family */
+    font-family: 'Al Qalam Quran Majeed Web', sans-serif; /* Change font-family */
     font-size: 50px; /* Change font size to 20px */
     line-height: 1.5;
     direction: rtl;
@@ -84,7 +91,7 @@ h1 {
 }
 
 .english-verse {
-    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    font-family: 'Al Qalam Quran Majeed Web', sans-serif;
     font-size: 35px; /* Change font size to 18px */
     line-height: 1.5;
     margin: 2px 0;
