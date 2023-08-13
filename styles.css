@@ -377,23 +377,3 @@ hr.dashed {
   border-top: 0px dashed #3498db;
 }
 
-/* Button styling */
-.font-button {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background-color: #3498db;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    padding: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-}
-
-.font-button:hover {
-    background-color: #2980b9;
-    transform: scale(1.1);
-}
-
-
