@@ -311,73 +311,70 @@ body.dark-mode {
 
 /* ... (rest of your CSS) ... */
 
-.theme-toggle-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 23px;
 }
 
-.theme-toggle-ios {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 30px;
-    border: 2px solid #ccc;
-    border-radius: 15px;
-    cursor: pointer;
-    background-color: #fff;
-    transition: background-color 0.3s;
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
-.theme-toggle-ios:hover {
-    background-color: #f2f2f2;
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #2196F3;
+  -webkit-transition: .4s;
+  transition: .4s;
 }
 
-.theme-toggle-handle {
-    position: absolute;
-    width: 26px;
-    height: 26px;
-    border-radius: 50%;
-    background-color: #ccc;
-    left: 2px;
-    top: 2px;
-    transition: transform 0.3s;
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
 }
 
-.theme-toggle-ios.dark-mode .theme-toggle-handle {
-    transform: translateX(30px);
-    background-color: #333;
+input:checked + .slider {
+  background-color: #000;
 }
 
-.theme-toggle-ios input[type="checkbox"] {
-    display: none;
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
 }
 
-.theme-toggle-ios input[type="checkbox"]:checked + .theme-toggle-handle {
-    transform: translateX(30px);
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
 }
 
-.theme-toggle-ios input[type="checkbox"]:checked + .theme-toggle-handle i.fas.fa-moon:before {
-    left: 12px;
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
 }
 
-.theme-toggle-ios input[type="checkbox"]:checked + .theme-toggle-handle i.fas.fa-sun:before {
-    right: 12px;
+.slider.round:before {
+  border-radius: 50%;
 }
-
-@keyframes toggleSunMoon {
-    0%, 100% {
-        left: 5px;
-        right: auto;
-    }
-    50% {
-        left: auto;
-        right: 5px;
-    }
-}
-
-.theme-toggle-ios input[type="checkbox"]:checked + .theme-toggle-handle i.fas.fa-moon:before,
-.theme-toggle-ios input[type="checkbox"]:checked + .theme-toggle-handle i.fas.fa-sun:before {
-    animation: toggleSunMoon 0.3s linear;
+/* Dashed border */
+hr.dashed {
+  border-top: 0px dashed #3498db;
 }
 
