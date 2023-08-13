@@ -276,3 +276,108 @@ h1 {
 p {
   font-size: 25px;
 }
+
+/* New styles for the theme toggle button */
+.theme-toggle {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.theme-toggle:hover {
+    background-color: #2980b9;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background: linear-gradient(to bottom, #000, #333, #444); /* Dark background gradient */
+    color: #fff; /* Light text color */
+}
+
+.verses-container.dark-mode {
+    background-color: #333; /* Dark background color for verses container */
+    color: #fff;
+}
+
+.verses-container.dark-mode .verse {
+    background-color: #222; /* Dark background color for individual verses */
+    color: #fff; /* Light text color for verses text */
+}
+
+/* ... (rest of your CSS) ... */
+
+.theme-toggle-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.theme-toggle-ios {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    border: 2px solid #ccc;
+    border-radius: 15px;
+    cursor: pointer;
+    background-color: #fff;
+    transition: background-color 0.3s;
+}
+
+.theme-toggle-ios:hover {
+    background-color: #f2f2f2;
+}
+
+.theme-toggle-handle {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: #ccc;
+    left: 2px;
+    top: 2px;
+    transition: transform 0.3s;
+}
+
+.theme-toggle-ios.dark-mode .theme-toggle-handle {
+    transform: translateX(30px);
+    background-color: #333;
+}
+
+.theme-toggle-ios input[type="checkbox"] {
+    display: none;
+}
+
+.theme-toggle-ios input[type="checkbox"]:checked + .theme-toggle-handle {
+    transform: translateX(30px);
+}
+
+.theme-toggle-ios input[type="checkbox"]:checked + .theme-toggle-handle i.fas.fa-moon:before {
+    left: 12px;
+}
+
+.theme-toggle-ios input[type="checkbox"]:checked + .theme-toggle-handle i.fas.fa-sun:before {
+    right: 12px;
+}
+
+@keyframes toggleSunMoon {
+    0%, 100% {
+        left: 5px;
+        right: auto;
+    }
+    50% {
+        left: auto;
+        right: 5px;
+    }
+}
+
+.theme-toggle-ios input[type="checkbox"]:checked + .theme-toggle-handle i.fas.fa-moon:before,
+.theme-toggle-ios input[type="checkbox"]:checked + .theme-toggle-handle i.fas.fa-sun:before {
+    animation: toggleSunMoon 0.3s linear;
+}
+

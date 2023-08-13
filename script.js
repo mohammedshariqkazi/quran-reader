@@ -12651,6 +12651,14 @@ function displayChapterVerses(chapter, arabicVerses, englishVerses) {
     versesContainer.innerHTML = `<h2>${chapterNames[chapter - 1]}</h2>${versePairsHTML}`;
 }
 
+const themeToggle = document.getElementById('theme-toggle');
+const body = document.body;
+
+themeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    versesContainer.classList.toggle('dark-mode');
+});
+
 function generateVersePairs(arabicVerses, englishVerses) {
     let versePairsHTML = '';
 

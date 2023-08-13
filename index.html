@@ -29,10 +29,10 @@
     <header class="top-header">
         <div class="container">
             <a href="https://quranread.netlify.app/">
-            <div class="logo">
-                <img src="Read_Quran.svg" alt="Read Quran Logo" width="100">
-            </div>
-        </a>
+                <div class="logo">
+                    <img src="Read_Quran.svg" alt="Read Quran Logo" width="100">
+                </div>
+            </a>
             <div class="chapter-selector" id="chapter-selector">
                 <select>
                     <option value="" disabled selected>Click here to select a chapter</option>
@@ -42,19 +42,22 @@
             </div>
         </div>
         <div class="created-by">
+            <button class="theme-toggle" id="theme-toggle">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+            </button>
             Created with ❤ by <a href="https://www.instagram.com/shariq.kazi" target="_blank">Shariq Kazi</a>
         </div>
     </header>
     <div class="container">
         <div class="verses-container" id="verses-container">
-        <span class="loader"></span>
+            <span class="loader"></span>
             <div></div>
             <div></div>
             <div></div>
             <div></div>
         </div>
-            <!-- Verses will be inserted here -->
-        </div>
+        <!-- Verses will be inserted here -->
     </div>
     <script src="script.js"></script>
     <a href="#" class="top">Back to Top &#8593;</a>
