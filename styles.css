@@ -373,7 +373,7 @@ body.dark-mode {
 }
 
 input:checked + .slider {
-  background-color: #000;
+  background-color: #f00;
 }
 
 input:focus + .slider {
@@ -523,4 +523,8 @@ hr.dashed {
 .dark-mode .status-bar-background {
   background-color: var(--status-bar-color);
   color: white; /* Change text color to white in dark mode */
+}
+
+.dark-mode .created-by a {
+    color: #f00; /* Change this color to your desired color for dark mode */
 }
