@@ -1,5 +1,6 @@
 const chapterSelector = document.getElementById("chapter-selector");
 const versesContainer = document.getElementById("verses-container");
+const englishToggle = document.getElementById("english-toggle");
 
 // Sample Arabic Quran content for all chapters (replace with your actual content)
 const arabicQuranText = `
@@ -12608,78 +12609,129 @@ const arabicChapterMap = new Map();
 const englishChapterMap = new Map();
 
 arabicChapters.forEach((chapterText, index) => {
-    const [chapter, verseNo, verse] = chapterText.split("|");
+  const [chapter, verseNo, verse] = chapterText.split("|");
 
-    if (!arabicChapterMap.has(chapter)) {
-        arabicChapterMap.set(chapter, []);
-    }
+  if (!arabicChapterMap.has(chapter)) {
+    arabicChapterMap.set(chapter, []);
+  }
 
-    arabicChapterMap.get(chapter).push(`<p>${verse}</p>`);
+  arabicChapterMap.get(chapter).push(`<p>${verse}</p>`);
 });
 
 englishChapters.forEach((chapterText, index) => {
-    const [chapter, verseNo, verse] = chapterText.split("|");
+  const [chapter, verseNo, verse] = chapterText.split("|");
 
-    if (!englishChapterMap.has(chapter)) {
-        englishChapterMap.set(chapter, []);
-    }
+  if (!englishChapterMap.has(chapter)) {
+    englishChapterMap.set(chapter, []);
+  }
 
-    englishChapterMap.get(chapter).push(`<p>${verse}</p>`);
+  englishChapterMap.get(chapter).push(`<p>${verse}</p>`);
 });
 
 // Populate the chapter dropdown with options
-const chapterOptions = chapterNames.map((chapterName, index) => `<option value="${index + 1}">${index + 1}. ${chapterName}</option>`).join("");
+const chapterOptions = chapterNames
+  .map((chapterName, index) => `<option value="${index + 1}">${index + 1}. ${chapterName}</option>`)
+  .join("");
 chapterSelector.querySelector("select").innerHTML = chapterOptions;
 
-// Display Chapter 1 verses by default
+// Display Chapter 1 verses and Arabic translation by default
 const defaultChapter = "1";
-displayChapterVerses(defaultChapter, arabicChapterMap.get(defaultChapter), englishChapterMap.get(defaultChapter));
+const defaultArabicVerses = arabicChapterMap.get(defaultChapter);
+const defaultEnglishVerses = englishChapterMap.get(defaultChapter);
+displayChapterVerses(defaultChapter, defaultArabicVerses, defaultEnglishVerses);
 
 // Listen for changes in the dropdown selection
-chapterSelector.querySelector("select").addEventListener("change", event => {
-    const selectedChapter = event.target.value;
-    displayChapterVerses(selectedChapter, arabicChapterMap.get(selectedChapter), englishChapterMap.get(selectedChapter));
-});
+chapterSelector.querySelector("select").addEventListener("change", handleSelectionChange);
+
+// Listen for changes in the English translation toggle
+englishToggle.addEventListener("change", handleToggleChange);
 
 function checkRtl(character) {
-    var RTL = ['ا','ب','پ','ت','س','ج','چ','ح','خ','د','ذ','ر','ز','ژ','س','ش','ص','ض','ط','ظ','ع','غ','ف','ق','ک','گ','ل','م','ن','و','ه','ی'];
-    return RTL.indexOf(character) > -1;
+  var RTL = [
+    "ا",
+    "ب",
+    "پ",
+    "ت",
+    "س",
+    "ج",
+    "چ",
+    "ح",
+    "خ",
+    "د",
+    "ذ",
+    "ر",
+    "ز",
+    "ژ",
+    "س",
+    "ش",
+    "ص",
+    "ض",
+    "ط",
+    "ظ",
+    "ع",
+    "غ",
+    "ف",
+    "ق",
+    "ک",
+    "گ",
+    "ل",
+    "م",
+    "ن",
+    "و",
+    "ه",
+    "ی",
+  ];
+  return RTL.indexOf(character) > -1;
+}
+
+function handleSelectionChange(event) {
+  const selectedChapter = event.target.value;
+  const arabicVerses = arabicChapterMap.get(selectedChapter);
+  const englishVerses = englishChapterMap.get(selectedChapter);
+  displayChapterVerses(selectedChapter, arabicVerses, englishVerses);
+}
+
+function handleToggleChange() {
+  const selectedChapter = chapterSelector.querySelector("select").value;
+  const arabicVerses = arabicChapterMap.get(selectedChapter);
+  const englishVerses = englishChapterMap.get(selectedChapter);
+  displayChapterVerses(selectedChapter, arabicVerses, englishVerses);
 }
 
 function displayChapterVerses(chapter, arabicVerses, englishVerses) {
-    const versePairsHTML = generateVersePairs(arabicVerses, englishVerses);
-    versesContainer.innerHTML = `<h2>${chapterNames[chapter - 1]}</h2>${versePairsHTML}`;
+  const showEnglishTranslation = englishToggle.value === "true";
+  const versePairsHTML = generateVersePairs(arabicVerses, englishVerses, showEnglishTranslation);
+  versesContainer.innerHTML = `<h2>${chapterNames[chapter - 1]}</h2>${versePairsHTML}`;
 }
 
-const themeToggle = document.querySelector('.switch input');
+const themeToggle = document.querySelector(".switch input");
 const body = document.body;
 
-themeToggle.addEventListener('change', () => {
-    body.classList.toggle('dark-mode');
-    versesContainer.classList.toggle('dark-mode');
+themeToggle.addEventListener("change", () => {
+  body.classList.toggle("dark-mode");
+  versesContainer.classList.toggle("dark-mode");
 });
 
+function generateVersePairs(arabicVerses, englishVerses, showEnglishTranslation) {
+  let versePairsHTML = "";
 
-function generateVersePairs(arabicVerses, englishVerses) {
-    let versePairsHTML = '';
+  for (let i = 0; i < arabicVerses.length; i++) {
+    const arabicVerse = arabicVerses[i];
+    const englishVerse = englishVerses[i];
 
-    for (let i = 0; i < arabicVerses.length; i++) {
-        const arabicVerse = arabicVerses[i];
-        const englishVerse = englishVerses[i];
+    const arabicRtlClass = checkRtl(arabicVerse[0]) ? "rtl" : "ltr"; // Apply RTL or LTR class for Arabic verse
+    const englishRtlClass = checkRtl(englishVerse[0]) ? "rtl" : "ltr"; // Apply RTL or LTR class for English verse
 
-        const arabicRtlClass = checkRtl(arabicVerse[0]) ? 'rtl' : 'ltr'; // Apply RTL or LTR class for Arabic verse
-        const englishRtlClass = checkRtl(englishVerse[0]) ? 'rtl' : 'ltr'; // Apply RTL or LTR class for English verse
+    versePairsHTML += `
+      <div class="verse-pair">
+        <div class="verse">
+          <p class="arabic-verse ${arabicRtlClass}">${arabicVerse}</p>
+          <p class="english-verse ${englishRtlClass}">${showEnglishTranslation ? englishVerse : ""}</p>
+        </div>
+      </div>
+      <div class="verse-separator"></div>
+    `;
+  }
 
-        versePairsHTML += `
-            <div class="verse-pair">
-                <div class="verse">
-                    <p class="arabic-verse ${arabicRtlClass}">${arabicVerse}</p>
-                    <p class="english-verse ${englishRtlClass}">${englishVerse}</p>
-                </div>
-            </div>
-            <div class="verse-separator"></div>
-        `;
-    }
-
-    return versePairsHTML;
+  return versePairsHTML;
 }
