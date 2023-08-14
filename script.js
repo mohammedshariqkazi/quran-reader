@@ -12601,6 +12601,7 @@ const chapterNames = [
 
 ];
 
+
 // Split the Arabic and English texts into chapters and verses
 const arabicChapters = arabicQuranText.trim().split("\n");
 const englishChapters = englishQuranText.trim().split("\n");
@@ -12699,7 +12700,7 @@ function handleToggleChange() {
 }
 
 function displayChapterVerses(chapter, arabicVerses, englishVerses) {
-  const showEnglishTranslation = englishToggle.value === "true";
+  const showEnglishTranslation = englishToggle.checked;
   const versePairsHTML = generateVersePairs(arabicVerses, englishVerses, showEnglishTranslation);
   versesContainer.innerHTML = `<h2>${chapterNames[chapter - 1]}</h2>${versePairsHTML}`;
 }
