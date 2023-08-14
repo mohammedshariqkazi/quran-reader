@@ -12707,10 +12707,12 @@ function displayChapterVerses(chapter, arabicVerses, englishVerses) {
 
 const themeToggle = document.querySelector(".switch input");
 const body = document.body;
+const logo = document.getElementById("logo");
 
 themeToggle.addEventListener("change", () => {
   body.classList.toggle("dark-mode");
   versesContainer.classList.toggle("dark-mode");
+  logo.src = body.classList.contains("dark-mode") ? "logolight.svg" : "Read_Quran.svg";
 });
 
 function generateVersePairs(arabicVerses, englishVerses, showEnglishTranslation) {

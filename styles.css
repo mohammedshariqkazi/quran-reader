@@ -166,7 +166,7 @@ h1 {
 .dropdown-icon {
     position: absolute;
     font-size: 20px;
-    top: 50%;
+    top: 65%;
     right: 10px;
     transform: translateY(-50%);
     pointer-events: none;
@@ -474,4 +474,40 @@ hr.dashed {
   border: 1px solid #444;
 }
 
-/* ... (other dark mode styles) ... */
+/* Dark mode for container */
+.dark-mode .container {
+  background: linear-gradient(to bottom, #111, #222); /* Update with your preferred dark mode colors */
+  color: white;
+}
+
+.dark-mode .top-header {
+  background: linear-gradient(to bottom, #111, #222); /* Update with your preferred dark mode colors */
+  color: white;
+}
+
+.dark-mode .chapter-selector {
+  background-color: #222;
+  border-color: #444;
+  color: white;
+}
+
+/* Dark mode for dropdown icon */
+.dark-mode .dropdown-icon {
+  color: white;
+}
+
+/* Dark mode for chapter dropdown options */
+.dark-mode .chapter-selector select {
+  background-color: #222;
+  color: white;
+}
+
+/* Chapter selector border */
+.chapter-selector select {
+  border: 2px solid #fff; /* Default border color for light mode */
+}
+
+/* Dark mode chapter selector border */
+.dark-mode chapter-selector select {
+  border-color: #fff; /* Border color for dark mode */
+}
