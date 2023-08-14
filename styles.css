@@ -302,7 +302,7 @@ p {
 
 /* Dark mode styles */
 body.dark-mode {
-    background: linear-gradient(to bottom, #000, #333, #444); /* Dark background gradient */
+    background: linear-gradient(to bottom, #000, #111, #111); /* Dark background gradient */
     color: #fff; /* Light text color */
 }
 
@@ -423,35 +423,35 @@ hr.dashed {
 
 /* Dark mode styles */
 .dark-mode {
-  background-color: #222;
+  background-color: #111;
   color: #fff;
 }
 
 /* Dark mode for specific elements */
 .dark-mode .top-header {
-  background-color: #333;
+  background-color: #111;
   color: #fff;
 }
 
 .dark-mode .chapter-selector,
 .dark-mode .english-dropdown {
-  background-color: #444;
+  background-color: #111;
   color: #fff;
 }
 
 /* Dark mode for logo background */
 .dark-mode .logo {
-  background-color: #444;
+  background-color: #111;
 }
 
 /* Dark mode for status bar background */
 .dark-mode .status-bar-background {
-  background-color: #333;
+  background-color: #111;
 }
 
 /* Dark mode for created by header */
 .dark-mode .created-by {
-  background-color: #444;
+  background-color: #111;
   color: #fff;
 }
 
@@ -466,28 +466,28 @@ hr.dashed {
 
 /* Dark mode for verses container */
 .dark-mode .verses-container {
-  background-color: #222;
+  background-color: #111;
 }
 
 /* Dark mode for individual verses */
 .dark-mode .verse-pair {
-  border: 1px solid #444;
+  border: 1px solid #fff;
 }
 
 /* Dark mode for container */
 .dark-mode .container {
-  background: linear-gradient(to bottom, #111, #222); /* Update with your preferred dark mode colors */
+  background: linear-gradient(to bottom, #111, #111); /* Update with your preferred dark mode colors */
   color: white;
 }
 
 .dark-mode .top-header {
-  background: linear-gradient(to bottom, #111, #222); /* Update with your preferred dark mode colors */
+  background: linear-gradient(to bottom, #111, #111); /* Update with your preferred dark mode colors */
   color: white;
 }
 
 .dark-mode .chapter-selector {
-  background-color: #222;
-  border-color: #444;
+  background-color: #111;
+  border-color: #111;
   color: white;
 }
 
@@ -498,7 +498,7 @@ hr.dashed {
 
 /* Dark mode for chapter dropdown options */
 .dark-mode .chapter-selector select {
-  background-color: #222;
+  background-color: #111;
   color: white;
 }
 
