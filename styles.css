@@ -511,3 +511,16 @@ hr.dashed {
 .dark-mode chapter-selector select {
   border-color: #fff; /* Border color for dark mode */
 }
+
+:root {
+  --status-bar-color: #3498db; /* Default theme color */
+}
+
+/* Apply the custom status bar color */
+.light-mode .status-bar-background {
+  background-color: var(--status-bar-color);
+}
+.dark-mode .status-bar-background {
+  background-color: var(--status-bar-color);
+  color: white; /* Change text color to white in dark mode */
+}

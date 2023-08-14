@@ -12713,6 +12713,13 @@ themeToggle.addEventListener("change", () => {
   body.classList.toggle("dark-mode");
   versesContainer.classList.toggle("dark-mode");
   logo.src = body.classList.contains("dark-mode") ? "logolight.svg" : "Read_Quran.svg";
+
+  // Update the preferred status bar style based on dark mode
+  if (body.classList.contains("dark-mode")) {
+    document.documentElement.style.setProperty('--status-bar-color', '#000000'); // Set the status bar color to black
+  } else {
+    document.documentElement.style.setProperty('--status-bar-color', '#3498db'); // Set the status bar color to your theme color
+  }
 });
 
 function generateVersePairs(arabicVerses, englishVerses, showEnglishTranslation) {
