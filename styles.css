@@ -166,7 +166,7 @@ h1 {
 .dropdown-icon {
     position: absolute;
     font-size: 20px;
-    top: 65%;
+    top: 55%;
     right: 10px;
     transform: translateY(-50%);
     pointer-events: none;
@@ -528,3 +528,9 @@ hr.dashed {
 .dark-mode .created-by a {
     color: #f00; /* Change this color to your desired color for dark mode */
 }
+
+.fas {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+}
+
