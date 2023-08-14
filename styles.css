@@ -366,14 +366,14 @@ body.dark-mode {
   width: 14px;
   left: 3px;
   bottom: 3px;
-  background-color: white; /* Change circle color when active */
+  background-color: darkred; /* Change circle color when active */
   border-radius: 50%;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
 input:checked + .slider {
-  background-color: #f00;
+  background-color: #adff2f;
 }
 
 input:focus + .slider {
