@@ -407,3 +407,71 @@ p {
     margin-top: 2px;
     margin-bottom: 2px;
 }
+
+
+/* Toggle switch styles */
+.switch {
+  /* ... (your existing styles) ... */
+}
+
+/* ... (your existing styles) ... */
+
+/* Dashed border */
+hr.dashed {
+  border-top: 0px dashed #3498db;
+}
+
+/* Dark mode styles */
+.dark-mode {
+  background-color: #222;
+  color: #fff;
+}
+
+/* Dark mode for specific elements */
+.dark-mode .top-header {
+  background-color: #333;
+  color: #fff;
+}
+
+.dark-mode .chapter-selector,
+.dark-mode .english-dropdown {
+  background-color: #444;
+  color: #fff;
+}
+
+/* Dark mode for logo background */
+.dark-mode .logo {
+  background-color: #444;
+}
+
+/* Dark mode for status bar background */
+.dark-mode .status-bar-background {
+  background-color: #333;
+}
+
+/* Dark mode for created by header */
+.dark-mode .created-by {
+  background-color: #444;
+  color: #fff;
+}
+
+/* ... (other specific elements) ... */
+
+/* Dark mode for p tags */
+.dark-mode p {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+/* Dark mode for verses container */
+.dark-mode .verses-container {
+  background-color: #222;
+}
+
+/* Dark mode for individual verses */
+.dark-mode .verse-pair {
+  border: 1px solid #444;
+}
+
+/* ... (other dark mode styles) ... */
