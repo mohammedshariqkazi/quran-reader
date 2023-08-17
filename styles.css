@@ -428,6 +428,7 @@ hr.dashed {
 .dark-mode {
   background-color: #111;
   color: #fff;
+  
 }
 
 /* Dark mode for specific elements */
@@ -462,8 +463,6 @@ hr.dashed {
 
 /* Dark mode for p tags */
 .dark-mode p {
-  margin-top: 15px;
-  margin-bottom: 15px;
   color: #fff;
 }
 
@@ -558,3 +557,7 @@ hr.dashed {
 ::-webkit-scrollbar-thumb:hover {
   background: #b30000; 
 }
+
+.dark-mode p {
+  margin-top: 2px;
+  margin-bottom: 2px;
